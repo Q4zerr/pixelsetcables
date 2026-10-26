@@ -1,0 +1,168 @@
+// ________________________________________________________
+// #######################################################
+//──│ 1. Uses
+//──│ 2. Imports
+//──│ 3. Fonts
+//──│ 4. Font sizes
+//──│ 5. Elementor font sizes rewrite
+// ________________________________________________________
+// #######################################################
+
+//──│ 1. Uses
+@use "../abstracts" as *;
+@use "sass:map";
+
+//──│ 2. Imports
+
+/*
+* PREFER USING WOFF2 FILES /!\
+*/
+
+$font-path: "../../assets/fonts";
+
+// BrushScript
+@include font-face(
+  "BrushScript",
+  "#{$font-path}/BrushScriptMT",
+  normal,
+  normal,
+  swap,
+  (woff2)
+);
+
+// Poppins
+$poppins: (
+  // 100: (
+  //   name: "Thin",
+  //   italic: true,
+  // ),
+  // 200: (
+  //   name: "ExtraLight",
+  //   italic: true,
+  // ),
+  // 300: (
+  //   name: "Light",
+  //   italic: true,
+  // ),
+  400: (
+      name: "Regular",
+      italic: true,
+    ),
+  500: (
+    name: "Medium",
+    italic: false,
+  ),
+  600: (
+    name: "SemiBold",
+    italic: false,
+  ),
+  700: (
+    name: "Bold",
+    italic: false,
+  ),
+  // 800: (
+  //   name: "ExtraBold",
+  //   italic: true,
+  // ),
+  // 900: (
+  //   name: "Black",
+  //   italic: true,
+   // ),
+);
+
+@each $w, $cfg in $poppins {
+  $name: map.get($cfg, name);
+  $has-italic: map.get($cfg, italic);
+
+  // Normal
+  @include font-face(
+    "Poppins",
+    "#{$font-path}/Poppins-#{$name}",
+    $w,
+    normal,
+    swap,
+    (woff2)
+  );
+
+  // Italic if available
+  @if $has-italic {
+    @include font-face(
+      "Poppins",
+      "#{$font-path}/Poppins-#{$name}Italic",
+      $w,
+      italic,
+      swap,
+      (woff2)
+    );
+  }
+}
+
+//──│ 4. Font sizes
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a,
+input,
+textarea,
+button,
+label,
+span,
+li,
+select {
+  font-family: var(--ff-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+li,
+p {
+  cursor: default;
+}
+
+a,
+span,
+button,
+label {
+  font-size: var(--fs-base);
+}
+
+ul {
+  li {
+    font-size: var(--fs-base);
+  }
+}
+
+label {
+  &.disabled {
+    color: rgba(36, 36, 35, 0.5);
+  }
+}
+
+p {
+  margin-block-end: 0px;
+}
+
+#wpadminbar {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  a,
+  input,
+  textarea,
+  button,
+  label,
+  span {
+    color: white !important;
+  }
+}
+
+//──│ 5. Elementor font sizes rewrite

@@ -1,0 +1,79 @@
+/*
+ * #############################################################################
+ * @Filename: _utility_classes.scss                                            #
+ * @Date: Friday, July 7th 2023, 10:48:26                                      #
+ * @Author: HiceoTristan                                                       #
+ * @Author email: webmaster@hiceo.fr                                           #
+ * @Last Modified: Wednesday, March 13th 2024, 09:29:59                        #
+ * @Modified By: HiceoTristan                                                  #
+ * @Copyright (c) 2023 Hiceo                                                   #
+ * #############################################################################
+*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+.banner {
+  & > .elementor-container {
+    padding-block: var(--banner-offset);
+  }
+}
+
+/* #####################################################################################
+ * ############################## TITLE HOME ####################################
+ * ##################################################################################### */
+
+.title-home,
+.title-home .word {
+  text-transform: uppercase;
+  font-size: 80px;
+  background: linear-gradient(to right, var(--pink), var(--pink)) no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 0%;
+  line-height: 100px;
+}
+@media (max-width: 1024px) {
+  .title-home,
+  .title-home .word {
+    text-transform: uppercase;
+    font-size: 60px;
+    background: linear-gradient(to right, var(--pink), var(--pink)) no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 0%;
+    line-height: 75px;
+  }
+}
+@media (max-width: 767px) {
+  .title-home,
+  .title-home .word {
+    text-transform: uppercase;
+    font-size: 45px;
+    background: linear-gradient(to right, var(--pink), var(--pink)) no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 0%;
+    line-height: 60px;
+  }
+}
+@media (max-width: 520px) {
+  .title-home,
+  .title-home .word {
+    text-transform: uppercase;
+    font-size: 35px;
+    background: linear-gradient(to right, var(--pink), var(--pink)) no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 0%;
+    line-height: 50px;
+  }
+}

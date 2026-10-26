@@ -1,0 +1,87 @@
+// ________________________________________________________
+// #######################################################
+//──│ 1. Uses
+//──│ 2. Global
+//──│ 3. Global rewrites
+// ________________________________________________________
+// #######################################################
+
+//──│ 1. Uses
+@use "../abstracts" as *;
+
+//──│ 2. Global
+html {
+  font-size: calc(1em * 0.625);
+}
+header,
+footer {
+  z-index: 999 !important;
+}
+html,
+body {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+body {
+  overflow-x: hidden;
+  background-color: var(--theme-white-blue);
+  transition: background-color var(--transition-time);
+}
+
+img.has-image-shadow {
+  @include globalShadow;
+}
+
+a {
+  transition: all var(--transition-time) !important;
+  &:hover {
+    --text-color: var(--orange);
+  }
+}
+
+// :focus {
+//   outline: none !important;
+// }
+
+//──│ 3. Global rewrites
+.elementor {
+  position: relative;
+}
+
+.elementor-widget-image-carousel {
+  .swiper-wrapper {
+    transition-timing-function: linear;
+    .swiper-slide {
+      &-inner {
+        background-color: var(--white-base);
+        border-radius: var(--border-radius);
+        display: flex;
+        height: 10em;
+        justify-content: center;
+        margin-right: 2em !important;
+        img {
+          object-fit: contain;
+          padding: 1em;
+        }
+      }
+    }
+  }
+}
+
+.elementor-button {
+  transition: all var(--transition-time) !important;
+}
+
+// Anchors menu offset
+body:not(.elementor-editor-active) .elementor-widget-menu-anchor {
+  position: relative;
+  z-index: -1;
+}
+body:not(.elementor-editor-active) .elementor-menu-anchor:before {
+  content: "";
+  display: block;
+  height: 100px; // fixed header height
+  margin: -100px 0 0; // negative fixed header height
+  visibility: hidden;
+  pointer-events: none;
+}

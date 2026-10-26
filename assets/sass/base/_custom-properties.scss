@@ -1,0 +1,68 @@
+:root {
+  //──│ 2. Global
+  --transition-time: 0.5s;
+  --default-transition: all 0.25s ease-in-out;
+  --section-margin: 10em;
+  --section-padding: 6em;
+  --2-padding: 2em;
+  --4-padding: 4em;
+  --border-radius: 5px;
+  --banner-offset: 20em;
+  --gap: 1em;
+
+  //──│ 3. Colors
+  --alpha-1: rgba(0, 0, 0, 0);
+  --white-base: rgba(255, 255, 255, 1);
+  --white-base-75: rgba(255, 255, 255, 0.75);
+  --white-base-alpha-1: rgba(255, 255, 255, 0.5);
+  --black-base: rgba(0, 0, 0, 1);
+
+  --grey: #707070;
+  --pink: #ff9191;
+  --pink-50: #ff919180;
+  --green: #bde038;
+  --green-com: #bde038;
+  --orange-market: #ffa200;
+  --pink-dev: #ff00bb;
+  --blue-event: #00e5ff;
+  --dark-blue: #070435;
+  --dark-blue-75: #070435bf;
+  --black: rgb(22, 22, 21);
+
+  --text-color: var(--theme-grey-white);
+
+  //──│ 4. Fonts
+  --fs-base: 1.6rem;
+
+  --ff-base: "Poppins", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --ff-brush: "BrushScript", "Brush Script MT", cursive;
+
+  // Default theme
+  --theme-white-blue: var(--white-base);
+  --theme-white-blue-75: var(--white-base-75);
+  --theme-blue-white: var(--dark-blue);
+  --theme-black-white: var(--black);
+  --theme-white-black: var(--white-base);
+  --theme-grey-pink: var(--grey);
+  --theme-grey-white: var(--grey);
+}
+
+[data-theme="light"] {
+  --theme-white-blue: var(--white-base);
+  --theme-white-blue-75: var(--white-base-75);
+  --theme-blue-white: var(--dark-blue);
+  --theme-black-white: var(--black);
+  --theme-white-black: var(--white-base);
+  --theme-grey-pink: var(--grey);
+  --theme-grey-white: var(--grey);
+}
+
+[data-theme="dark"] {
+  --theme-white-blue: var(--dark-blue);
+  --theme-white-blue-75: var(--dark-blue-75);
+  --theme-blue-white: var(--white-base);
+  --theme-black-white: var(--white-base);
+  --theme-white-black: var(--black);
+  --theme-grey-pink: var(--pink);
+  --theme-grey-white: var(--white-base);
+}

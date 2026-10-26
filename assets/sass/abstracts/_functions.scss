@@ -1,0 +1,24 @@
+// ________________________________________________________
+// #######################################################
+//──│ 1. Functions
+// ________________________________________________________
+// #######################################################
+
+//──│ 1. Functions
+
+// PX to REM converter
+@function rem($pixels, $context: $-browser-context) {
+  @return #{$pixels/$context} rem;
+}
+
+// PX to vw converter
+@function vw($target, $context: $-width-context) {
+  $vw-context: ($context * 0.01) * 1px;
+  @return (($target * 1px) / $vw-context) * 1vw;
+}
+
+// PX to vh converter
+@function vh($target, $context: $-height-context) {
+  $vh-context: ($context * 0.01) * 1px;
+  @return (($target * 1px) / $vh-context) * 1vh;
+}

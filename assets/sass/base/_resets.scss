@@ -1,0 +1,77 @@
+/* -------- CSS reset ------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset --> example of resets */
+
+/* box sizing and reset margins */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; // elemnt inherit its box-sizing from its parent
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* set up the body */
+body {
+  box-sizing: border-box; // padding + border included in width
+  line-height: 1.5;
+  min-height: 100vh; // prevent small screen from being an issue
+  position: absolute;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* make img easier to work with */
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*font-size inherit for elements in h tag*/
+:is(h1, h2, h3, h4, h5, h6) {
+  span {
+    font-size: inherit;
+  }
+}

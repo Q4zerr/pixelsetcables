@@ -1,0 +1,172 @@
+/*
+ * #############################################################################
+ * @Filename: _mixins.scss                                                     #
+ * @Date: 2025-10-31 10:37                                                     #
+ * @Author: Tanguy Hiceo                                                       #
+ * @Author email: tavet.hiceo@gmail.com                                        #
+ * @Last Modified: 2025-10-31 10:37                                            #
+ * @Modified By: Tanguy Hiceo                                                  #
+ * @Copyright (c) 2026 -                                                       #
+ * #############################################################################
+ */
+
+//──│ USE
+@use "sass:list";
+@use "sass:string";
+@use "./breakpoints" as *;
+
+//──│ 1. SHADOWS & COLORS
+
+// Global shadow asset
+@mixin globalShadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@mixin globalShadowDarker {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.46);
+}
+
+// Global gradient asset
+@mixin globalGradient {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#ffffff", GradientType=1);
+}
+
+//──│ 2. DISPLAYING
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+//──│ 3. FONTS
+
+/// @param {String}  $family   - Nom de la police (CSS)
+/// @param {String}  $file     - Chemin + nom de base du fichier (sans extension)
+/// @param {Number}  $weight   - Poids (ex: 400)
+/// @param {String}  $style    - Style (ex: normal, italic)
+/// @param {String}  $display  - font-display (ex: swap)
+/// @param {List}    $formats  - Liste des formats disponibles dans ton projet (ex: (woff2, woff))
+/// @param {List}    $local    - Liste des noms locaux (ex: ('Poppins Regular','Poppins-Regular'))
+
+@mixin font-face(
+  $family,
+  $file,
+  $weight: 400,
+  $style: normal,
+  $display: swap,
+  $formats: (woff2, woff),
+  $local: ()
+) {
+  $src: ();
+
+  @if list.length($local) > 0 {
+    @each $ln in $local {
+      $src: list.append($src, string.unquote("local('#{$ln}')"), comma);
+    }
+  }
+
+  @each $ext in $formats {
+    @if $ext == woff2 {
+      $src: list.append(
+        $src,
+        string.unquote("url('#{$file}.woff2') format('woff2')"),
+        comma
+      );
+    } @else if $ext == woff {
+      $src: list.append(
+        $src,
+        string.unquote("url('#{$file}.woff') format('woff')"),
+        comma
+      );
+    } @else if $ext == ttf {
+      $src: list.append(
+        $src,
+        string.unquote("url('#{$file}.ttf') format('truetype')"),
+        comma
+      );
+    } @else if $ext == eot {
+      $src: list.append(
+        $src,
+        string.unquote(
+          "url('#{$file}.eot?#iefix') format('embedded-opentype')"
+        ),
+        comma
+      );
+    } @else if $ext == svg {
+      $src: list.append(
+        $src,
+        string.unquote("url('#{$file}.svg##{$family}') format('svg')"),
+        comma
+      );
+    }
+  }
+
+  @font-face {
+    font-family: string.quote($family);
+    src: $src;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: $display;
+  }
+}
+
+//──│ 4. MEDIA QUERIES
+
+@mixin phone {
+  @media screen and (max-width: ($phone * 1px)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: ($tablet * 1px)) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: ($laptop * 1px)) {
+    @content;
+  }
+}
+
+// ===== Usage =====
+// h1 {
+//   font-size: 20px;
+
+//   @include laptop {
+//     font-size: 18px;
+//   }
+
+//   @include tablet {
+//     font-size: 16px;
+//   }
+
+//   @include phone {
+//     font-size: 14px;
+//   }
+// }

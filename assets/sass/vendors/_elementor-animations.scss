@@ -1,0 +1,139 @@
+/*
+ * #############################################################################
+ * @Filename: _aosRewrite.scss                                                 #
+ * @Date: Friday, February 9th 2024, 02:03:5                                   #
+ * @Author: TBergerDev                                                         #
+ * @Author email: tristan.berger.dev@gmail.com                                 #
+ * @Last Modified: Friday, February 9th 2024, 02:03:14                         #
+ * @Modified By: TBergerDev                                                    #
+ * @Copyright (c) 2024 -                                                       #
+ * #############################################################################
+*/
+
+// ________________________________________________________
+// #######################################################
+//──│ 1. Animations - override default elementor AOS animations values
+// ________________________________________________________
+// #######################################################
+
+.elementor-element.fadeInDown {
+  animation-name: fadeInDownCustom;
+}
+@keyframes fadeInDownCustom {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.elementor-element.fadeInLeft {
+  animation-name: fadeInLeftCustom;
+}
+@keyframes fadeInLeftCustom {
+  from {
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.elementor-element.fadeInRight {
+  animation-name: fadeInRightCustom;
+}
+@keyframes fadeInRightCustom {
+  from {
+    opacity: 0;
+    transform: translate3d(100px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.elementor-element.fadeInUp {
+  animation-name: fadeInUpCustom;
+}
+@keyframes fadeInUpCustom {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.elementor-element.fadeInUpFast {
+  animation-name: fadeInUpFast;
+}
+@keyframes fadeInUpFast {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.elementor-element.slideInLeft {
+  animation-name: slideInLeftCustom;
+}
+@keyframes slideInLeftCustom {
+  from {
+    transform: translate3d(-100px, 0, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.elementor-element.slideInRight {
+  animation-name: slideInRightCustom;
+}
+@keyframes slideInRightCustom {
+  from {
+    transform: translate3d(100px, 0, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.elementor-element.slideInUp {
+  animation-name: slideInUpCustom;
+}
+@keyframes slideInUpCustom {
+  from {
+    transform: translate3d(0, 100px, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.elementor-element.slideInDown {
+  animation-name: slideInDownCustom;
+}
+@keyframes slideInDownCustom {
+  from {
+    transform: translate3d(0, -100px, 0);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.addedAnimation:not(.animated) {
+  opacity: 0;
+}

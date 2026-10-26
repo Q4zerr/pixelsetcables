@@ -1,0 +1,114 @@
+/*
+ * #############################################################################
+ * @Filename: _popup_menu.scss                                                 #
+ * @Date: Friday, February 23rd 2024, 05:43:59                                 #
+ * @Author: TBergerDev                                                         #
+ * @Author email: tristan.berger.dev@gmail.com                                 #
+ * @Last Modified: Tuesday, February 27th 2024, 05:40:59                       #
+ * @Modified By: HiceoTanguy                                                  #
+ * @Copyright (c) 2024 -                                                       #
+ * #############################################################################
+*/
+
+.popup-menu {
+  .modal-close {
+    .elementor-icon-wrapper {
+      display: flex;
+      align-items: center;
+    }
+    circle {
+      transition: fill var(--transition-time);
+    }
+    &:hover {
+      circle {
+        fill: var(--green);
+      }
+    }
+  }
+
+  nav {
+    a {
+      font-size: 60px;
+      text-transform: uppercase;
+      font-weight: 100;
+      &:hover {
+        font-weight: bold;
+        --text-color: var(--white-base);
+        &.com {
+          --text-color: var(--green-com);
+        }
+        &.market {
+          --text-color: var(--orange-market);
+        }
+        &.event {
+          --text-color: var(--blue-event);
+        }
+        &.dev {
+          --text-color: var(--pink-dev);
+        }
+      }
+    }
+  }
+
+  .bottom {
+    font-size: 14px;
+    --text-color: var(--white-base);
+    .coords {
+      a {
+        text-decoration: underline;
+        &:hover {
+          --text-color: var(--pink);
+        }
+      }
+    }
+    .socials {
+      .elementor-icon {
+        width: 70px;
+        height: 70px;
+        place-items: center;
+        display: grid;
+        border-radius: 50%;
+        svg {
+          width: 40px;
+          height: 40px;
+          transform: translate(var(--tx, 0), var(--ty, 0));
+          transition: all 0.2s ease-out;
+        }
+      }
+      svg path {
+        transition: fill var(--transition-time);
+      }
+      svg:hover path {
+        fill: var(--pink);
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .popup-menu {
+    nav {
+      a {
+        font-size: 40px;
+      }
+    }
+  }
+}
+@media (max-width: 1300px) {
+  .popup-menu {
+    nav {
+      a {
+        font-size: 35px;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .popup-menu {
+    nav {
+      a {
+        font-size: 27px;
+      }
+    }
+  }
+}
