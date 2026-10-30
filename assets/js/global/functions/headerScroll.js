@@ -1,15 +1,3 @@
-/*
- * #############################################################################
- * @Filename: headerScroll.js                                                  #
- * @Date: Thursday, May 25th 2026, 02:13:31                                    #
- * @Author: HiceoTanguy                                                       #
- * @Author email: webmaster@hiceo.fr                                           #
- * @Last Modified: Tuesday, February 27th 2024, 04:53:10                       #
- * @Modified By: HiceoTanguy                                                  #
- * @Copyright (c) 2026 Hiceo                                                   #
- * #############################################################################
- */
-
 //──│ 2. headerScroll
 export default function headerScroll() {
   const header = document.querySelector("#masthead");

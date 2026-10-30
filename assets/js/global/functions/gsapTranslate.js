@@ -1,15 +1,3 @@
-/*
- * #############################################################################
- * @Filename: gsapTranslate.js                                                 #
- * @Date: Thursday, February 29th 2024, 10:51:34                               #
- * @Author: HiceoTanguy                                                       #
- * @Author email: webmaster@hiceo.fr                                           #
- * @Last Modified: Thursday, February 29th 2024, 12:08:04                      #
- * @Modified By: HiceoTanguy                                                  #
- * @Copyright (c) 2026 Hiceo                                                   #
- * #############################################################################
- */
-
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

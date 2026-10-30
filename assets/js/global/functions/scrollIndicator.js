@@ -1,15 +1,3 @@
-/*
- * #############################################################################
- * @Filename: scrollIndicator.js                                               #
- * @Date: Wednesday, February 28th 2024, 09:36:8                               #
- * @Author: HiceoTanguy                                                       #
- * @Author email: webmaster@hiceo.fr                                           #
- * @Last Modified: Wednesday, February 28th 2024, 09:57:38                     #
- * @Modified By: HiceoTanguy                                                  #
- * @Copyright (c) 2024 Hiceo                                                   #
- * #############################################################################
- */
-
 //──│ 2. scrollIndicator
 export default function scrollIndicator() {
   const progress = document.querySelector(".progress");
